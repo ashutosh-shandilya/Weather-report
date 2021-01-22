@@ -1,8 +1,11 @@
 import requests
+import os
 
 location=input("Enter the city name:")
 
-api_url="https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid=267b9cb63af46f97e68b3f87a726d699"
+key=os.environ['api_key']
+
+api_url="https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+key
 
 request=requests.get(api_url)
 
